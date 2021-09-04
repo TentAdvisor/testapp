@@ -11,7 +11,10 @@ RUN export GO111MODULE=on
 # Download all dependencies. Dependencies will be cached if the go.mod and go.sum files are not changed
 #RUN go mod download
 
+RUN mkdir static
+
 COPY main /app
+COPY static/index.html /app/static/
 
 # Build the application
 #RUN go build -o main .
