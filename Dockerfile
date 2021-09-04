@@ -11,10 +11,10 @@ RUN export GO111MODULE=on
 # Download all dependencies. Dependencies will be cached if the go.mod and go.sum files are not changed
 #RUN go mod download
 
-COPY . .
+COPY main /app
 
 # Build the application
-RUN go build -o main .
+#RUN go build -o main .
 
 # Expose port 9000 to the outside world
 EXPOSE 9000
