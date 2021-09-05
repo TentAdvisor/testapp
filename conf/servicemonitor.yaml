@@ -2,13 +2,15 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   labels:
+    app: testapp
     k8s-app: testapp
   name: testapp
-  namespace: apptest
+  namespace: testapp
 spec:
   endpoints:
+  - path: /metrics
   - interval: 30s
-    port: web
+    port: http
     scheme: http
   selector:
     matchLabels:
