@@ -10,9 +10,6 @@ RUN mkdir static
 COPY main /app
 COPY static/index.html /app/static/
 
-# Build the application
-#RUN go build -o main .
-
 # Expose port 9000 to the outside world
 EXPOSE 9000
 
